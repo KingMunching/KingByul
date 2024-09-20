@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cqy5wt11amiq4"]
+[gd_scene load_steps=28 format=3 uid="uid://cqy5wt11amiq4"]
 
 [ext_resource type="Script" path="res://scripts/player_movement.gd" id="1_dk5e5"]
 [ext_resource type="Texture2D" uid="uid://bst0met0g04j0" path="res://assets/players/elf_m_idle_anim_f0.png" id="1_vj0s2"]
@@ -45,6 +45,21 @@ tracks/0/keys = {
 "values": [ExtResource("1_vj0s2"), ExtResource("7_m5kan"), ExtResource("8_klgaj"), ExtResource("9_howk7")]
 }
 
+[sub_resource type="Animation" id="Animation_j6brk"]
+resource_name = "move_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElfMIdleAnimF0:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.233333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_sdql7")]
+}
+
 [sub_resource type="Animation" id="Animation_o5dwk"]
 resource_name = "move_right"
 length = 0.8
@@ -66,6 +81,7 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_c600d"),
 "idle_down": SubResource("Animation_t1b5l"),
+"move_left": SubResource("Animation_j6brk"),
 "move_right": SubResource("Animation_o5dwk")
 }
 
@@ -127,9 +143,12 @@ states/walk/position = Vector2(582, 100)
 transitions = ["Start", "walk", SubResource("AnimationNodeStateMachineTransition_yv808")]
 
 [node name="TestPlayer" type="CharacterBody2D"]
+position = Vector2(9.53674e-07, -18)
+scale = Vector2(2.84185, 2.9267)
 script = ExtResource("1_dk5e5")
 
 [node name="ElfMIdleAnimF0" type="Sprite2D" parent="."]
+position = Vector2(-7.45058e-09, 0.105686)
 texture = ExtResource("1_vj0s2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -142,8 +161,7 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-active = false
 tree_root = SubResource("AnimationNodeStateMachine_gr4k1")
 anim_player = NodePath("../AnimationPlayer")
-parameters/idle/blend_position = Vector2(0, 0)
-parameters/walk/blend_position = Vector2(0.187426, 0.350725)
+parameters/idle/blend_position = Vector2(-0.996549, -0.005988)
+parameters/walk/blend_position = Vector2(-0.107852, 0.00884962)

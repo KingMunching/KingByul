@@ -5,14 +5,18 @@ var SPEED = 80.0
 func _physics_process(delta):
 	var velocity = Vector2.ZERO
 	
-	# Handle movement input
+	# Handle movement input test
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1.0
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1.0
 	if Input.is_action_pressed("move_left"):
+		# Flip the sprite horizontally moving to left
+		$ElfMIdleAnimF0.flip_h = true
 		velocity.x -= 1.0
+		# Reset the sprite to face the right direction
 	if Input.is_action_pressed("move_right"):
+		$ElfMIdleAnimF0.flip_h = false
 		velocity.x += 1.0
 	
 	if velocity == Vector2.ZERO:
