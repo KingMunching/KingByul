@@ -1,5 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://ni7x7ttum4es"]
 
+<<<<<<< HEAD:scenes/animation_test.tscn
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_mk5sg"]
 [ext_resource type="Texture2D" uid="uid://bst0met0g04j0" path="res://assets/players/elf_m_idle_anim_f0.png" id="2_ky8lo"]
 [ext_resource type="Texture2D" uid="uid://bmcuwknkhpl5g" path="res://assets/players/elf_m_idle_anim_f2.png" id="2_uhg6p"]
@@ -9,6 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://biqt3wh4hhg5d" path="res://assets/players/elf_m_run_anim_f1.png" id="6_wbmy1"]
 [ext_resource type="Texture2D" uid="uid://bbthoa8e245kf" path="res://assets/players/elf_m_run_anim_f2.png" id="7_yktos"]
 [ext_resource type="Texture2D" uid="uid://vqjy3soregdx" path="res://assets/players/elf_m_run_anim_f3.png" id="9_knm0u"]
+=======
+[ext_resource type="Texture2D" uid="uid://bmcuwknkhpl5g" path="res://assets/players/elf_m_idle_anim_f2.png" id="2_ixa1w"]
+[ext_resource type="Texture2D" uid="uid://bst0met0g04j0" path="res://assets/players/elf_m_idle_anim_f0.png" id="3_sqhvv"]
+[ext_resource type="Texture2D" uid="uid://bqqgnjvb8tb84" path="res://assets/players/elf_m_idle_anim_f3.png" id="4_f8ryb"]
+[ext_resource type="Texture2D" uid="uid://dfbpsr3elsuby" path="res://assets/players/elf_m_run_anim_f0.png" id="5_m754f"]
+[ext_resource type="Texture2D" uid="uid://biqt3wh4hhg5d" path="res://assets/players/elf_m_run_anim_f1.png" id="6_np1re"]
+[ext_resource type="Texture2D" uid="uid://bbthoa8e245kf" path="res://assets/players/elf_m_run_anim_f2.png" id="7_ywbdw"]
+>>>>>>> 8a154d99b427f13d8ebd76c55de430e7f5bf55e1:nodes/players/animation_test.tscn
 
 [sub_resource type="Animation" id="Animation_6lxck"]
 length = 0.001
@@ -22,11 +31,12 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_uhg6p")]
+"values": [ExtResource("2_ixa1w")]
 }
 
 [sub_resource type="Animation" id="Animation_30kmo"]
 resource_name = "idle"
+<<<<<<< HEAD:scenes/animation_test.tscn
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -43,6 +53,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_g1ouj"]
 resource_name = "running"
+=======
+length = 0.9
+>>>>>>> 8a154d99b427f13d8ebd76c55de430e7f5bf55e1:nodes/players/animation_test.tscn
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -51,10 +64,34 @@ tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+<<<<<<< HEAD:scenes/animation_test.tscn
 "times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("5_163fo"), ExtResource("6_wbmy1"), ExtResource("7_yktos"), ExtResource("9_knm0u")]
+=======
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1.03526, 1, 1),
+"update": 1,
+"values": [ExtResource("3_sqhvv"), ExtResource("2_ixa1w"), ExtResource("4_f8ryb")]
+}
+
+[sub_resource type="Animation" id="Animation_g1ouj"]
+resource_name = "running"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_m754f"), ExtResource("6_np1re"), ExtResource("7_ywbdw")]
+>>>>>>> 8a154d99b427f13d8ebd76c55de430e7f5bf55e1:nodes/players/animation_test.tscn
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qkn7b"]
@@ -64,15 +101,21 @@ _data = {
 "running": SubResource("Animation_g1ouj")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxnq0"]
+size = Vector2(8, 15.5)
+
 [node name="AnimationTest" type="Node2D"]
 
-[node name="Player" type="Node2D" parent="."]
-script = ExtResource("1_mk5sg")
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("2_uhg6p")
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_ixa1w")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Sprite2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D/Sprite2D"]
 libraries = {
 "": SubResource("AnimationLibrary_qkn7b")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_vxnq0")
