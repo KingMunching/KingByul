@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 var SPEED = 80.0
 
+@export var inv: Inv
+
 func _physics_process(delta):
 	var velocity = Vector2.ZERO
 	

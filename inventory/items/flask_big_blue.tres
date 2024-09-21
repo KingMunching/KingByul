@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://g0pavduhtgov"]
+
+[ext_resource type="Script" path="res://inventory/scripts/inventory_item.gd" id="1_uvdpb"]
+[ext_resource type="Texture2D" uid="uid://ctg3h63snqtok" path="res://assets/frames/potion/flask_big_blue.png" id="2_x8lxm"]
+
+[resource]
+script = ExtResource("1_uvdpb")
+name = "flask_big_blue"
+texture = ExtResource("2_x8lxm")

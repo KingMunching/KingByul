@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/player_movement.gd" id="1_dk5e5"]
 [ext_resource type="Texture2D" uid="uid://bst0met0g04j0" path="res://assets/players/elf_m_idle_anim_f0.png" id="1_vj0s2"]
 [ext_resource type="Texture2D" uid="uid://dfbpsr3elsuby" path="res://assets/players/elf_m_run_anim_f0.png" id="2_icjwp"]
-[ext_resource type="Resource" uid="uid://b27smoj6rwpj4" path="res://inventory/player_inventory.tres" id="2_suekx"]
+[ext_resource type="Resource" uid="uid://d3k7kw7g1gnew" path="res://inventory/player_inventory.tres" id="2_qwvab"]
 [ext_resource type="Texture2D" uid="uid://biqt3wh4hhg5d" path="res://assets/players/elf_m_run_anim_f1.png" id="3_sdql7"]
 [ext_resource type="Texture2D" uid="uid://bbthoa8e245kf" path="res://assets/players/elf_m_run_anim_f2.png" id="4_uqnkd"]
 [ext_resource type="Texture2D" uid="uid://vqjy3soregdx" path="res://assets/players/elf_m_run_anim_f3.png" id="5_77a0o"]
@@ -148,7 +148,7 @@ transitions = ["Start", "walk", SubResource("AnimationNodeStateMachineTransition
 position = Vector2(9.53674e-07, -18)
 scale = Vector2(2.84185, 2.9267)
 script = ExtResource("1_dk5e5")
-inv = ExtResource("2_suekx")
+inv = ExtResource("2_qwvab")
 
 [node name="ElfMIdleAnimF0" type="Sprite2D" parent="."]
 position = Vector2(-7.45058e-09, 0.105686)
