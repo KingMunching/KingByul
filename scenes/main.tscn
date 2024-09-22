@@ -278,3 +278,4 @@ layer_0/tile_data = PackedInt32Array(-65551, 0, 0, -65550, 0, 0, -65549, 0, 0, -
 
 [node name="TestPlayer" parent="TileMap" instance=ExtResource("1_5f25q")]
 position = Vector2(-177, -19)
+inv = null

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgbrarhdvv5ah"]
+[gd_scene load_steps=4 format=3 uid="uid://bgbrarhdvv5ah"]
 
 [ext_resource type="Script" path="res://inventory/scripts/inv_ui_slot.gd" id="1_kl08q"]
 [ext_resource type="Texture2D" uid="uid://dbuxceuqdkisf" path="res://inventory/assets/inv_slot.png" id="1_wwwg3"]
+[ext_resource type="Script" path="res://inventory/label.gd" id="3_h3hug"]
 
 [node name="inv_ui_slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -26,3 +27,15 @@ offset_bottom = 16.0
 layout_mode = 2
 
 [node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="Label" type="Label" parent="CenterContainer/Panel"]
+custom_minimum_size = Vector2(28, 23)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 29.0
+offset_bottom = 25.0
+scale = Vector2(0.25, 0.25)
+text = "99"
+horizontal_alignment = 2
+script = ExtResource("3_h3hug")

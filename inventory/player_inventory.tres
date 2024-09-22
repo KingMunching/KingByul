@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Inv" load_steps=6 format=3 uid="uid://b27smoj6rwpj4"]
 
-[ext_resource type="Script" path="res://inventory/scripts/inventory_item.gd" id="1_r5uqa"]
-[ext_resource type="Resource" uid="uid://b7m6s37t0eiti" path="res://inventory/items/coin.tres" id="2_g227u"]
+[ext_resource type="Script" path="res://inventory/scripts/inventory_item.gd" id="1_1dllw"]
+[ext_resource type="Resource" uid="uid://b7m6s37t0eiti" path="res://inventory/items/coin.tres" id="2_njpbb"]
 [ext_resource type="Script" path="res://inventory/scripts/inventory.gd" id="2_u0x8a"]
-[ext_resource type="Resource" uid="uid://g0pavduhtgov" path="res://inventory/items/flask_big_blue.tres" id="3_07jec"]
-[ext_resource type="Resource" uid="uid://bdbrsxqaq1r0w" path="res://inventory/items/flask_big_red.tres" id="4_dwl58"]
+[ext_resource type="Resource" uid="uid://g0pavduhtgov" path="res://inventory/items/flask_big_blue.tres" id="3_dc7fc"]
+[ext_resource type="Resource" uid="uid://bdbrsxqaq1r0w" path="res://inventory/items/flask_big_red.tres" id="4_oppjh"]
 
 [resource]
 script = ExtResource("2_u0x8a")
-items = Array[ExtResource("1_r5uqa")]([ExtResource("2_g227u"), ExtResource("3_07jec"), null, null, null, ExtResource("4_dwl58"), null, ExtResource("4_dwl58"), null, null, null, null])
+items = Array[ExtResource("1_1dllw")]([ExtResource("2_njpbb"), ExtResource("3_dc7fc"), ExtResource("4_oppjh"), null, null, null, null, null, ExtResource("4_oppjh"), ExtResource("3_dc7fc"), null, null])
