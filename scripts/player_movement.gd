@@ -1,8 +1,12 @@
 extends CharacterBody2D
 
-var SPEED = 80.0
+var SPEED = 180.0
+
+
 
 @export var inv: Inv
+@export var ghost_node : PackedScene
+@onready var ghost_timer = $GhostTimer
 
 func _physics_process(delta):
 	var velocity = Vector2.ZERO
@@ -52,3 +56,26 @@ func _physics_process(delta):
 	#
 	## Apply movement
 	#move_and_slide()
+	
+func add_ghost():
+	var ghost = ghost_node.instantiate()
+	ghost.position = position
+	get_tree().current_scene.add_child(ghost)
+	 # Debugging: Print both positions
+	print("Player position: ", position)
+	print("Ghost position: ", ghost.position)
+
+func _on_ghost_timer_timeout():
+	add_ghost()
+
+func dash():
+	ghost_timer.start()
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position", position + velocity * 1.5, 0.45)
+	await tween.finished
+	ghost_timer.stop()
+	
+ 
+func _input(event):
+	if event.is_action_pressed("dash"):
+		dash()
