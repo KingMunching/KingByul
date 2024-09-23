@@ -13,7 +13,7 @@ script = ExtResource("1_kl08q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(3.55271e-15, 0)
-scale = Vector2(0.0647773, 0.0829016)
+scale = Vector2(1, 1)
 texture = ExtResource("1_wwwg3")
 centered = false
 
@@ -31,9 +31,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="CenterContainer/Panel"]
 custom_minimum_size = Vector2(28, 23)
 layout_mode = 0
-offset_left = 1.0
 offset_top = 2.0
-offset_right = 29.0
+offset_right = 28.0
 offset_bottom = 25.0
 scale = Vector2(0.25, 0.25)
 text = "99"

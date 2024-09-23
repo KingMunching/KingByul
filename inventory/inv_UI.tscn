@@ -46,11 +46,12 @@ script = SubResource("GDScript_mk0o3")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_right = 85.0
-offset_bottom = 60.0
+offset_right = 83.0
+offset_bottom = 62.0
 texture = ExtResource("2_co8gl")
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+custom_minimum_size = Vector2(75, 55)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
